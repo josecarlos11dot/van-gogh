@@ -56,34 +56,56 @@ body{
 }
 
 /* Navegación */
-.main-nav{
-  display:flex;
-  justify-content: space-around;
-  gap:18px;
-  flex:1;                      /* empuja el buscador/icono a la derecha */
-}
+/* Links con subrayado animado (desktop + móvil) */
 .main-nav a{
-  color:var(--ink);
-  text-decoration:none;
-  font-weight:500;
+  position: relative;              /* necesario para ::after */
+  display: inline-block;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #1f2937;
+  text-align: left;
+  text-decoration: none;
+  overflow: hidden;
+  transition: color 0.3s ease;     /* cambio suave de color */
 }
-.main-nav a:hover{ color:var(--accent) }
 
-/* Botón/icono (ej. buscador) */
-.icon-btn{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:10px;
-  padding:8px 10px;
-  cursor:pointer;
+/* Línea animada oculta por defecto */
+.main-nav a::after{
+  content: "";
+  position: absolute;
+  left: 16px;                      /* alineada con padding izquierdo */
+  bottom: 0px;                     /* justo debajo del texto */
+  width: 0;
+  height: 2px;
+  background: var(--accent);       /* usa tu color de marca */
+  transition: width 0.3s ease;
 }
+
+/* Hover / foco: color + subrayado animado */
+.main-nav a:hover,
+.main-nav a:focus{
+  color: var(--accent);
+}
+.main-nav a:hover::after,
+.main-nav a:focus::after{
+  width: 25%;                      /* ✅ cuarto de la palabra */
+}
+
 
 /* ====== Responsive ====== */
+@media (min-width: 721px){
+  .nav-toggle { 
+    display: none;   /* oculta el botón en desktop */
+  }
+}
+
+
 @media (max-width: 720px){
   .header-inner{ min-height:90px; gap:16px; }
   .brand-logo{ height:44px; }
   .main-nav{ gap:12px; }
 }
+
 
 
 /* ====== Hero (franja arena) ====== */
@@ -551,7 +573,8 @@ body{
 .main-nav{
   position:absolute;
   top:100%; left:0; right:0;
-  background:#fff;
+  justify-content: left;
+  background:#f5f5f5;
   border-top:1px solid var(--line);
   display:grid;
   gap:10px;
@@ -572,6 +595,11 @@ body{
   max-height:60vh;
   opacity:1;
   pointer-events:auto;
+}
+
+.main-nav a:hover{
+  background:#e0e0e0;              /* ligero highlight */
+  
 }
 
 /* Evitar scroll del fondo cuando el menú está abierto (móvil) */
