@@ -1,0 +1,375 @@
+/* ====== Variables y base ====== */
+:root{
+  --ink:#1f2937;
+  --muted:#4b5563;
+  --bg:#ffffff;           /* página blanca */
+  --band:#c89563;         /* franja arena */
+  --accent:#0077b6;       /* botones / enlaces */
+  --line:#e5e7eb;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+}
+
+.container{
+  max-width:1200px;
+  margin-inline:auto;
+  padding-inline:20px;
+}
+
+/* ====== Header (blanco) ====== */
+.site-header{
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+
+.header-inner{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  min-height:120px; /* ajusta si tu logo es más pequeño */
+}
+
+/* Marca con imagen */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:0;                       /* ya no hay texto a la derecha */
+  color:inherit;
+  text-decoration:none;
+  font-weight:600;             /* sin efecto en la imagen, pero mantenemos la semántica */
+}
+
+.brand-logo{
+  display:block;
+  height: 100px;               /* <— ajusta a 36–64px según tu logo */
+  width:auto;
+  object-fit:contain;
+  -webkit-user-drag:none;
+  user-select:none;
+}
+
+/* Navegación */
+.main-nav{
+  display:flex;
+  justify-content: space-around;
+  gap:18px;
+  flex:1;                      /* empuja el buscador/icono a la derecha */
+}
+.main-nav a{
+  color:var(--ink);
+  text-decoration:none;
+  font-weight:500;
+}
+.main-nav a:hover{ color:var(--accent) }
+
+/* Botón/icono (ej. buscador) */
+.icon-btn{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:8px 10px;
+  cursor:pointer;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 720px){
+  .header-inner{ min-height:90px; gap:16px; }
+  .brand-logo{ height:44px; }
+  .main-nav{ gap:12px; }
+}
+
+
+/* ====== Hero (franja arena) ====== */
+.hero{
+  height: 800px;
+  background:var(--band);
+  
+  
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  align-items:center;
+  gap: 50px;
+}
+.cover{
+  text-align:right;
+  margin-top: 20px;
+}
+.cover img{
+  
+  margin-top: 60px;
+  max-width: 100%;
+  border-radius:2px;
+  
+}
+
+.details{
+ 
+  width: 570px;
+  height: 454px; 
+  margin-bottom: 150px;
+    
+    color:#1e1e1e}
+
+.title{
+  width: 570px;
+  height: 122px;
+  position: relative;
+  font-size:60px;
+  font-family:"BasierSquare", sans-serif;
+  color:rgb(38, 42, 50);
+  margin-top: -10px;
+  margin-bottom: -50px;
+ 
+}
+.meta{
+ margin-bottom: 0%;
+  
+}
+
+  
+
+/* Autor */
+.autor-label {
+ font-size:27px;
+  color: rgb(38, 42, 50);
+  font-weight: 500;
+}
+.autor-nombre {
+  font-size:27px;
+  color: #ffffff; 
+  font-weight: 500;
+}
+
+/* Traductor */
+.traductor-label {
+  font-size:27px;
+  color: rgb(38, 42, 50);
+  font-weight: 500;
+}
+.traductor-nombre {
+  font-size:27px;
+  color: #ffffff; 
+}
+.deck{
+  color:#222;
+  border-radius:8px;
+  margin-bottom:20px;
+  font-family: "BasierSquare", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.cta-row{margin:8px 0 18px}
+.btn-primary{
+    position: relative;
+  display:inline-block;
+  padding:5px;
+  padding-right: 25px;
+  background: white ;
+  color:#058a83;
+  text-decoration:none;
+  font-weight:700;
+  border:1px solid transparent;
+}
+.btn-primary:hover{filter:brightness(.92)}
+
+.btn-icon {
+  position: absolute;
+  right: -36px;   /* lo mueve fuera del borde derecho */
+  bottom: -14px;  /* lo baja para sobresalir */
+  width: 56px;    /* tamaño del icono */
+  height: 56px;
+}
+
+/* Opciones (selects) */
+/* ===== Layout general ===== */
+.options-row{
+  width: 570px;
+  margin-top: 60px;
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+.field label{
+  display:block;
+  font-size:14px;
+  color:#A97339;
+  margin-bottom:10px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.02em;
+}
+
+/* ===== Custom select ===== */
+.custom-select{
+  position:relative;
+  display:inline-block;
+  width:240px;
+  font-family:"BasierSquare", system-ui, sans-serif;
+  font-size:16px;
+  text-transform:uppercase;
+  cursor:pointer;
+  outline:0;
+  -webkit-tap-highlight-color:transparent;
+}
+
+/* Botón */
+.select-button{
+  background:#252a33;
+  color:#fff;
+  padding:0;                           /* quitamos padding para usar alturas exactas */
+  min-height:56px;                     /* alto como en la referencia */
+  display:flex;
+  align-items:stretch;                 /* para que la derecha estire a full */
+  justify-content:space-between;
+  transition:box-shadow .15s ease;
+  overflow:hidden;                     /* que el borde redondeado recorte dentro */
+}
+.custom-select .selected{
+  padding:0 16px;                      /* espacio a la izquierda */
+  display:flex;
+  align-items:center;
+  font-weight:700;
+  letter-spacing:.02em;
+}
+
+/* Bloque derecho: línea divisoria + caret */
+.right-chunk{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:0 16px;
+  border-left:1px solid rgba(255,255,255,.18); /* << línea divisoria */
+  align-self:stretch;                  /* ocupa alto completo del botón */
+}
+
+/* Caret SVG */
+.caret{
+  width:20px; height:20px;
+  flex:0 0 auto;
+  fill:none;
+  stroke:#efefef;
+  stroke-width:2.5;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  transition:transform .2s ease;
+  transform-origin:50% 50%;
+}
+
+/* Enfoque/abierto */
+.custom-select.open .select-button{ box-shadow:0 0 0 2px rgba(37,42,51,.25) inset; }
+.custom-select.open .caret{ transform:rotate(180deg); }
+
+/* Menú */
+.options{
+  position:absolute;
+  top:calc(100% + 4px);
+  left:0; right:0;
+  background:#efefef;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+  list-style:none;
+  padding:6px 0;
+  margin:0;
+  display:none;
+  z-index:2000;
+  max-height:240px;
+  overflow:auto;
+}
+.custom-select.open .options{ display:block; }
+
+/* Opción */
+.options li{
+  padding:12px 14px;
+  color:#252a33;
+  transition:background .2s, color .2s;
+  user-select:none;
+  cursor:pointer;
+  outline:0;
+  text-transform:none;                 /* el texto de las opciones en normal */
+}
+.options li:hover,
+.options li:focus,
+.options li:focus-visible{
+  background:#252a33;
+  color:#fff;
+  
+}
+
+/* Accesibilidad: focus visible del contenedor */
+.custom-select:focus{
+  
+  outline-offset:2px;
+}
+
+/* Share */
+.share{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:16px;
+  color:#2b2b2b;
+}
+.share a{text-decoration:none}
+
+.icon-fb svg {
+  display: inline-block;
+  fill: #7688a2;   /* color Facebook */
+  width: 28px;
+  height: 28px;
+  transition: fill 0.3s;
+}
+
+.icon-fb:hover svg {
+  fill: #a7bede;   /* color al pasar el mouse */
+}
+
+.icon-x svg {
+  display: inline-block;
+  fill: #7688a2;    /* color base (oscuro) */
+  width: 28px;
+  height: 28px;
+  transition: fill 0.3s;
+}
+
+.icon-x:hover svg {
+  fill: #a7bede;    /* color al pasar el mouse */
+}
+
+
+/* ====== Footer (blanco) ====== */
+.site-footer{
+  margin-top: 100px;
+  background:#fff;
+  
+}
+.footer-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  min-height:72px;
+}
+.footer-nav{display:flex; gap:16px}
+.footer-nav a{
+  color:var(--muted);
+  text-decoration:none;
+}
+.footer-nav a:hover{color:var(--accent)}
+
+/* ====== Responsive ====== */
+@media (max-width: 980px){
+  .hero-grid{
+    grid-template-columns: 1fr;
+    gap:28px;
+  }
+  .title{font-size:36px}
+}
