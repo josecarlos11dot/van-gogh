@@ -213,14 +213,17 @@ body{
 .custom-select{
   position:relative;
   display:inline-block;
-  width:240px;
+  width:100%;                 /* antes: 240px */
+  max-width:240px;            /* mantiene tamaño cómodo en desktop */
   font-family:"BasierSquare", system-ui, sans-serif;
   font-size:16px;
   text-transform:uppercase;
   cursor:pointer;
   outline:0;
   -webkit-tap-highlight-color:transparent;
+  z-index:1;                  /* base */
 }
+
 
 /* Botón */
 .select-button{
@@ -268,6 +271,10 @@ body{
 /* Enfoque/abierto */
 .custom-select.open .select-button{ box-shadow:0 0 0 2px rgba(37,42,51,.25) inset; }
 .custom-select.open .caret{ transform:rotate(180deg); }
+/* Al abrir, eleva el stacking del componente */
+.custom-select.open{
+  z-index:10001;
+}
 
 /* Menú */
 .options{
@@ -280,11 +287,14 @@ body{
   padding:6px 0;
   margin:0;
   display:none;
-  z-index:2000;
+  z-index:10000;                 /* antes: 2000 */
   max-height:240px;
-  overflow:auto;
+  overflow-y:auto;               /* scroll vertical */
+  -webkit-overflow-scrolling:touch;
+  pointer-events:auto;
 }
 .custom-select.open .options{ display:block; }
+
 
 /* Opción */
 .options li{
@@ -302,6 +312,23 @@ body{
   background:#252a33;
   color:#fff;
   
+}
+/* Hover/selección coherente con el color del select */
+.custom-select .options li:hover,
+.custom-select .options li:focus,
+.custom-select .options li:active,
+.custom-select .options li[aria-selected="true"],
+.custom-select .options li[aria-current="true"]{
+  background:#252a33;  /* mismo tono que .select-button */
+  color:#fff;
+  font-weight:600;
+  transition:background .2s ease, color .2s ease;
+}
+
+/* Placeholder distinguible (si lo usas) */
+.custom-select .options li.is-placeholder{
+  color:#6b7280;
+  font-style:italic;
 }
 
 /* Accesibilidad: focus visible del contenedor */
@@ -480,4 +507,73 @@ body{
     .right-chunk{ padding: 0 10px; gap: 6px; }
   }
   
-  
+  /* === Hamburguesa: base (esconde en desktop) === */
+.nav-toggle{
+  display:none;                /* se mostrará en mobile */
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:8px 10px;
+  cursor:pointer;
+  align-items:center;
+  gap:6px;
+}
+.nav-toggle-bar{
+  display:block;
+  width:22px;
+  height:2px;
+  background:#1f2937;
+  border-radius:2px;
+}
+.nav-toggle .nav-toggle-bar + .nav-toggle-bar{ margin-top:5px; }
+
+/* Estado abierto (animación X opcional) */
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2){ opacity:0; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+
+/* === Comportamiento móvil/tablet === */
+@media (max-width: 720px){
+  .site-header{ position: sticky; top:0; z-index: 100; }
+  .header-inner{ position: relative; }
+
+  /* Mostrar botón en mobile */
+  .nav-toggle{ display:inline-flex; }
+
+  /* Nav pasa a panel desplegable */
+  .main-nav{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background:#fff;
+    border-top:1px solid var(--line);
+    display: grid;
+    gap: 10px;
+    padding: 12px;
+    transform-origin: top;
+    transform: scaleY(0);
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .22s ease, opacity .22s ease, max-height .22s ease;
+    z-index: 99;
+  }
+
+  /* Enlaces más “tap-friendly” */
+  .main-nav a{
+    padding: 10px 6px;
+    font-size: 16px;
+  }
+
+  /* Nav abierto */
+  .main-nav.open{
+    transform: scaleY(1);
+    max-height: 60vh;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Evitar scroll del fondo al abrir el menú */
+  body.scroll-lock{ overflow: hidden; }
+}

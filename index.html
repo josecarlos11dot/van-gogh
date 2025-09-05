@@ -13,15 +13,22 @@
         <a class="brand" href="/" aria-label="Alianza Editorial">
   <img src="img/logo.png" alt="mustra logo" class="brand-logo">
 </a>
+<!-- Botón hamburguesa -->
+<button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú">
+  <span class="nav-toggle-bar"></span>
+  <span class="nav-toggle-bar"></span>
+  <span class="nav-toggle-bar"></span>
+</button>
 
+<!-- Navegación -->
+<nav class="main-nav" id="primary-nav">
+  <a href="#">Quiénes somos</a>
+  <a href="#">Van Gogh</a>
+  <a href="#">Cartas De Teo</a>
+  <a href="#">Obras</a>
+  <a href="#">Libros</a>
+</nav>
 
-      <nav class="main-nav">
-        <a href="#">Colecciones</a>
-        <a href="#">Libros</a>
-        <a href="#">Autores</a>
-        <a href="#">Actualidad</a>
-        <a href="#">Quiénes somos</a>
-      </nav>
 
       <button class="icon-btn" aria-label="Buscar">🔎</button>
     </div>
@@ -49,7 +56,7 @@
             </p>
             <p>
             <span class="label traductor-label">Traductor/a:</span>
-            <span class="traductor-nombre">—</span>
+            <span class="traductor-nombre">Yara Trevethan Gaxiola</span>
             </p>
             </div>
 
@@ -283,6 +290,31 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+  (function(){
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('primary-nav');
+    if(!btn || !nav) return;
+
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      nav.classList.toggle('open', !isOpen);
+      document.body.classList.toggle('scroll-lock', !isOpen);
+    });
+
+    // Cierra al tocar un enlace (opcional)
+    nav.addEventListener('click', (e) => {
+      if(e.target.matches('a')) {
+        btn.setAttribute('aria-expanded', 'false');
+        nav.classList.remove('open');
+        document.body.classList.remove('scroll-lock');
+      }
+    });
+  })();
+
+
+
 </script>
 
 
