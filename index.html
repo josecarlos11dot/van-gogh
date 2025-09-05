@@ -8,31 +8,35 @@
 </head>
 <body>
   <!-- HEADER (blanco) -->
-  <header class="site-header">
-    <div class="container header-inner">
-        <a class="brand" href="/" aria-label="Alianza Editorial">
-  <img src="img/logo.png" alt="mustra logo" class="brand-logo">
-</a>
-<!-- Botón hamburguesa -->
-<button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú">
-  <span class="nav-toggle-bar"></span>
-  <span class="nav-toggle-bar"></span>
-  <span class="nav-toggle-bar"></span>
-</button>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="brand">
+      <img src="img/logo.png" class="brand-logo" alt="Logo">
+    </a>
 
-<!-- Navegación -->
-<nav class="main-nav" id="primary-nav">
-  <a href="#">Quiénes somos</a>
-  <a href="#">Van Gogh</a>
-  <a href="#">Cartas De Teo</a>
-  <a href="#">Obras</a>
-  <a href="#">Libros</a>
-</nav>
+    <button class="nav-toggle svg" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú">
+      <svg viewBox="0 0 24 24" width="28" height="28" stroke="#1f2937" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+        <line x1="3" y1="14" x2="21" y2="14"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+    
+
+    <nav class="main-nav" id="primary-nav">
+      <a href="#">Quiénes somos</a>
+      <a href="#">Van Gogh</a>
+      <a href="#">Cartas De Teo</a>
+      <a href="#">Obras</a>
+      <a href="#">Libros</a>
+    </nav>
+  </div>
+</header>
 
 
-      <button class="icon-btn" aria-label="Buscar">🔎</button>
-    </div>
-  </header>
+  
 
   <!-- HERO / CONTENIDO (franja color arena) -->
   <main>
@@ -291,29 +295,26 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-  (function(){
-    const btn = document.querySelector('.nav-toggle');
-    const nav = document.getElementById('primary-nav');
-    if(!btn || !nav) return;
+(function(){
+  const btn = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('primary-nav');
+  if(!btn || !nav) return;
 
-    btn.addEventListener('click', () => {
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!isOpen));
-      nav.classList.toggle('open', !isOpen);
-      document.body.classList.toggle('scroll-lock', !isOpen);
-    });
+  btn.addEventListener('click', () => {
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    nav.classList.toggle('open', !isOpen);
+    document.body.classList.toggle('scroll-lock', !isOpen);
+  });
 
-    // Cierra al tocar un enlace (opcional)
-    nav.addEventListener('click', (e) => {
-      if(e.target.matches('a')) {
-        btn.setAttribute('aria-expanded', 'false');
-        nav.classList.remove('open');
-        document.body.classList.remove('scroll-lock');
-      }
-    });
-  })();
-
-
+  nav.addEventListener('click', (e) => {
+    if(e.target.matches('a')) {
+      btn.setAttribute('aria-expanded', 'false');
+      nav.classList.remove('open');
+      document.body.classList.remove('scroll-lock');
+    }
+  });
+})();
 
 </script>
 

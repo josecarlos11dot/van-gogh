@@ -507,73 +507,95 @@ body{
     .right-chunk{ padding: 0 10px; gap: 6px; }
   }
   
-  /* === Hamburguesa: base (esconde en desktop) === */
-.nav-toggle{
-  display:none;                /* se mostrará en mobile */
+/* ===========================
+   Header + Menú (mobile-first)
+   =========================== */
+
+/* Botón hamburguesa: 4 líneas que giran */
+/* ===========================
+   Header + Menú (mobile-first)
+   =========================== */
+
+/* Layout del header */
+.site-header{ position: relative; }
+.header-inner{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+.brand{ display:flex; align-items:center; }
+.brand-logo{ display:block; height:36px; width:auto; }
+
+.nav-toggle.svg {
+  margin-left:auto;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:40px; height:40px;
   background:#fff;
   border:1px solid var(--line);
-  border-radius:10px;
-  padding:8px 10px;
+  border-radius:6px;
   cursor:pointer;
-  align-items:center;
-  gap:6px;
 }
-.nav-toggle-bar{
-  display:block;
-  width:22px;
-  height:2px;
-  background:#1f2937;
-  border-radius:2px;
+
+.nav-toggle.svg svg {
+  transition: transform .3s ease;
 }
-.nav-toggle .nav-toggle-bar + .nav-toggle-bar{ margin-top:5px; }
 
-/* Estado abierto (animación X opcional) */
-.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1){ transform: translateY(7px) rotate(45deg); }
-.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2){ opacity:0; }
-.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+.nav-toggle.svg[aria-expanded="true"] svg {
+  transform: rotate(90deg);
+}
 
-/* === Comportamiento móvil/tablet === */
-@media (max-width: 720px){
-  .site-header{ position: sticky; top:0; z-index: 100; }
-  .header-inner{ position: relative; }
 
-  /* Mostrar botón en mobile */
-  .nav-toggle{ display:inline-flex; }
+/* Panel de navegación (colapsado por defecto en móvil) */
+.main-nav{
+  position:absolute;
+  top:100%; left:0; right:0;
+  background:#fff;
+  border-top:1px solid var(--line);
+  display:grid;
+  gap:10px;
+  padding:12px;
+  transform-origin:top;
+  transform:scaleY(0);
+  max-height:0;
+  opacity:0;
+  pointer-events:none;
+  transition:transform .22s ease, opacity .22s ease, max-height .22s ease;
+  z-index:99;
+}
+.main-nav a{ padding:10px 6px; font-size:16px; }
 
-  /* Nav pasa a panel desplegable */
+/* Nav abierto (móvil) */
+.main-nav.open{
+  transform:scaleY(1);
+  max-height:60vh;
+  opacity:1;
+  pointer-events:auto;
+}
+
+/* Evitar scroll del fondo cuando el menú está abierto (móvil) */
+body.scroll-lock{ overflow:hidden; }
+
+/* ===========================
+   Desktop (≥ 721px)
+   =========================== */
+@media (min-width:721px){
+  .nav-toggle{ display:none; }      /* oculta botón en desktop */
+
   .main-nav{
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background:#fff;
-    border-top:1px solid var(--line);
-    display: grid;
-    gap: 10px;
-    padding: 12px;
-    transform-origin: top;
-    transform: scaleY(0);
-    max-height: 0;
-    opacity: 0;
-    pointer-events: none;
-    transition: transform .22s ease, opacity .22s ease, max-height .22s ease;
-    z-index: 99;
+    position:static;
+    display:flex;                   /* nav horizontal */
+    gap:18px;
+    margin-left:auto;               /* ⟵ nav a la derecha, opuesto al logo */
+    padding:0;
+    transform:none;
+    max-height:none;
+    opacity:1;
+    pointer-events:auto;
+    background:transparent;
+    border-top:0;
   }
 
-  /* Enlaces más “tap-friendly” */
-  .main-nav a{
-    padding: 10px 6px;
-    font-size: 16px;
-  }
-
-  /* Nav abierto */
-  .main-nav.open{
-    transform: scaleY(1);
-    max-height: 60vh;
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  /* Evitar scroll del fondo al abrir el menú */
-  body.scroll-lock{ overflow: hidden; }
+  .main-nav a{ padding:0; font-size:inherit; }
 }
