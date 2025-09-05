@@ -366,139 +366,118 @@ body{
 .footer-nav a:hover{color:var(--accent)}
 
 /* ============================================================
-   📱 Mobile ultra-estrecho (iPhone SE, 320px)
-   (overrides responsables y sin romper desktop)
+   📱 Mobile (<= 480px): iPhone 6–15/SE/Android pequeños
    ============================================================ */
-   @media (max-width: 320px){
+   @media (max-width: 480px){
 
-    /* Contenedor: respiración mínima y sin clipping */
+    /* Contenedor sin clipping (necesario para el dropdown) */
     .container{
       max-width: 100%;
       padding-inline: 12px;
-      overflow: visible;            /* ✅ permite que el menú se despliegue */
+      overflow: visible; /* permite que el menú se despliegue */
     }
   
-    /* Header compacto y navegación desplazable horizontalmente */
-    .header-inner{
-      min-height: 64px;
-      gap: 10px;
-    }
+    /* Header compacto y navegación desplazable */
+    .header-inner{ min-height: 64px; gap: 10px; }
     .brand-logo{ height: 36px; }
     .main-nav{
-      gap: 10px;
-      flex: 1 1 auto;
+      gap: 10px; flex: 1 1 auto;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
-      scrollbar-width: none; /* Firefox */
+      scrollbar-width: none;
     }
     .main-nav::-webkit-scrollbar{ display: none; }
   
-    /* HERO */
-    .hero{
-      height: auto;                /* sin altura fija */
-      padding-block: 22px;         /* respiración vertical */
-    }
+    /* HERO a una columna */
+    .hero{ height: auto; padding-block: 22px; }
     .hero-grid{
       display: grid;
-      grid-template-columns: 1fr;  /* 1 columna */
+      grid-template-columns: 1fr;
       gap: 18px;
       align-items: start;
     }
   
-    /* Portada centrada y contenido fluido */
+    /* Portada centrada y fluida */
     .cover{ text-align: center; margin-top: 0; }
-    .cover img{
-      margin-top: 0;
-      max-width: 72%;              /* que no ocupe todo el ancho */
-      height: auto;
-    }
+    .cover img{ margin-top: 0; max-width: 72%; height: auto; }
   
-    /* Detalles sin anchos/altos rígidos */
+    /* Detalles fluidos */
     .details{
       width: auto !important;
       height: auto !important;
-      margin: 0;                   /* sin margen inferior enorme */
+      margin: 0;
       color: #1e1e1e;
     }
   
     /* Título adaptable */
     .title{
-      width: auto;
-      height: auto;
+      width: auto; height: auto;
       margin: 0 0 6px 0;
-      font-size: 28px;             /* base cómoda en 320px */
-      line-height: 1.1;
+      font-size: 28px; line-height: 1.1;
     }
   
-    /* Meta (Autor/Traductor) */
-    .meta{ margin: 6px 0 8px 0; }
-    .autor-label,
-    .autor-nombre,
-    .traductor-label,
-    .traductor-nombre{
-      font-size: 16px;
-      line-height: 1.25;
-      display: inline-block;
+    /* Meta */
+    .meta{ margin: 6px 0 8px; }
+    .autor-label, .autor-nombre,
+    .traductor-label, .traductor-nombre{
+      font-size: 16px; line-height: 1.25; display: inline-block;
     }
   
-    /* Bajada (deck) más legible */
-    .deck{
-      font-size: 16px;
-      font-weight: 500;
-      margin: 8px 0 14px 0;
-    }
+    /* Bajada (deck) */
+    .deck{ font-size: 16px; font-weight: 500; margin: 8px 0 14px; }
   
     /* CTA */
     .cta-row{ margin: 6px 0 14px; }
     .btn-primary{
-      padding: 8px 12px 8px 12px;  /* caja contenida */
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      padding: 8px 12px;
+      display: inline-flex; align-items: center; gap: 8px;
     }
-    .btn-icon{
-      position: static;            /* que no se salga del botón */
-      width: 28px;
-      height: 28px;
-    }
+    .btn-icon{ position: static; width: 28px; height: 28px; }
   
-    /* Bloque de opciones: columna y 100% ancho */
+    /* Bloque de opciones: columna y 100% */
     .options-row{
       width: 100% !important;
       margin-top: 12px;
-      display: grid;
-      grid-template-columns: 1fr;
+      display: grid; grid-template-columns: 1fr;
       gap: 12px;
     }
-    .field label{
-      font-size: 12px;
-      margin-bottom: 6px;
-    }
+    .field label{ font-size: 12px; margin-bottom: 6px; }
   
     /* Custom select full-width y tap-friendly */
     .custom-select{
       width: 100% !important;
-      max-width: none;             /* full-bleed en móvil */
+      max-width: none;               /* full-bleed en móvil */
       font-size: 14px;
     }
     .select-button{ min-height: 48px; }
     .custom-select .selected{ padding: 0 12px; }
     .right-chunk{ gap: 8px; padding: 0 12px; }
   
-    /* Menú en móvil: altura controlada */
-    .options{ max-height: 200px; }
-    .options li{ padding: 10px 12px; }
-  
-    /* Footer compacto */
-    .site-footer{ margin-top: 36px; }
-    .footer-inner{
-      min-height: 56px;
-      gap: 10px;
-      flex-wrap: wrap;
+    /* Menú en móvil: altura controlada y por encima de todo */
+    .options{
+      max-height: 220px;
+      z-index: 10000;
+      -webkit-overflow-scrolling: touch;
     }
-    .share{ gap: 8px; font-size: 14px; }
+    .options li{ padding: 10px 12px; }
   
     /* Seguridad: evitar que ancestros recorten el menú */
     .hero, .header-inner, .footer-inner{ overflow: visible; }
+  
+    /* Footer compacto */
+    .site-footer{ margin-top: 36px; }
+    .footer-inner{ min-height: 56px; gap: 10px; flex-wrap: wrap; }
+    .share{ gap: 8px; font-size: 14px; }
   }
+  
+  /* ============================================================
+     📱 Micro (<= 375px): afinado para iPhone “no Max” y SE
+     ============================================================ */
+  @media (max-width: 375px){
+    .title{ font-size: 26px; }
+    .deck{ font-size: 15px; }
+    .custom-select .selected{ padding: 0 10px; }
+    .right-chunk{ padding: 0 10px; gap: 6px; }
+  }
+  
   
