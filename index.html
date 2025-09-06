@@ -1,323 +1,587 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>El último Van Gogh</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <!-- HEADER (blanco) -->
-<!-- HEADER -->
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="/" class="brand">
-      <img src="img/logo.png" class="brand-logo" alt="Logo">
-    </a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El último Van Gogh</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- HEADER (blanco) -->
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="brand">
+          <img src="img/logo.png" class="brand-logo" alt="Logo" />
+        </a>
 
-    <button class="nav-toggle svg" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú">
-      <svg viewBox="0 0 24 24" width="28" height="28" stroke="#1f2937" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="3" y1="6" x2="21" y2="6"/>
-        <line x1="3" y1="10" x2="21" y2="10"/>
-        <line x1="3" y1="14" x2="21" y2="14"/>
-        <line x1="3" y1="18" x2="21" y2="18"/>
-      </svg>
-    </button>
-    
+        <button
+          class="nav-toggle svg"
+          aria-controls="primary-nav"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            width="28"
+            height="28"
+            stroke="#1f2937"
+            stroke-width="2"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+            <line x1="3" y1="14" x2="21" y2="14" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
 
-    <nav class="main-nav" id="primary-nav">
-      <a href="#">Quiénes somos</a>
-      <a href="#">Van Gogh</a>
-      <a href="#">Cartas De Teo</a>
-      <a href="#">Obras</a>
-      <a href="#">Libros</a>
-    </nav>
-  </div>
-</header>
+      <nav class="main-nav" id="primary-nav">
+  <a href="#" data-modal="modal-quienes">Quiénes somos</a>
+  <a href="#" data-modal="modal-vangogh">Van Gogh</a>
+  <a href="#" data-modal="modal-cartas">Cartas De Teo</a>
+  <a href="#" data-modal="modal-obras">Obras</a>
+  <a href="#" data-modal="modal-libros">Libros</a>
+</nav>
+      </div>
+    </header>
 
+    <!-- HERO / CONTENIDO (franja color arena) -->
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <!-- Portada -->
+          <div class="cover">
+            <img
+              src="https://pdlibrosmex.cdnstatics2.com/usuaris/libros/thumbs/587ea72f-0018-4e53-bf21-e8b5b6f937b9/d_1200_1200/portada_el-ultimo-van-gogh_alyson-richman_202402021920.webp"
+              alt="Portada de El último Van Gogh"
+            />
+          </div>
 
-  
+          <!-- Detalles -->
+          <div class="details">
+            <h1 class="title">El último Van Gogh</h1>
 
-  <!-- HERO / CONTENIDO (franja color arena) -->
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <!-- Portada -->
-        <div class="cover">
-          <img
-            src="https://pdlibrosmex.cdnstatics2.com/usuaris/libros/thumbs/587ea72f-0018-4e53-bf21-e8b5b6f937b9/d_1200_1200/portada_el-ultimo-van-gogh_alyson-richman_202402021920.webp"
-            alt="Portada de El último Van Gogh" />
-        </div>
-
-        <!-- Detalles -->
-        <div class="details">
-          <h1 class="title">El último Van Gogh</h1>
-
-          <div class="meta">
-            <p class="content">
-            <span class="label autor-label">Autor/a:</span>
-            <span class="autor-nombre">Alyson Richman</span>
-            </p>
-            <p>
-            <span class="label traductor-label">Traductor/a:</span>
-            <span class="traductor-nombre">Yara Trevethan Gaxiola</span>
-            </p>
+            <div class="meta">
+              <p class="content">
+                <span class="label autor-label">Autor/a:</span>
+                <span class="autor-nombre">Alyson Richman</span>
+              </p>
+              <p>
+                <span class="label traductor-label">Traductor/a:</span>
+                <span class="traductor-nombre">Yara Trevethan Gaxiola</span>
+              </p>
             </div>
 
+            <p class="deck">
+              «En el <strong>verano de 1890</strong>, Vincent van Gogh llega a
+              <strong>Auvers-sur-Oise</strong> y, bajo el cuidado del
+              <strong>doctor Gachet</strong>, vive la
+              <strong>etapa final</strong> de su vida creativa: pinta
+              <strong>más de setenta cuadros</strong> y retrata a
+              <strong>Marguerite Gachet</strong>. Una
+              <strong>novela vibrante</strong> sobre el anhelo de belleza, la
+              fragilidad y el pulso apasionado de la creación.»
+            </p>
 
-      <p class="deck">
-  «En el <strong>verano de 1890</strong>, Vincent van Gogh llega a <strong>Auvers-sur-Oise</strong> y, bajo el cuidado del <strong>doctor Gachet</strong>, vive la <strong>etapa final</strong> de su vida creativa: pinta <strong>más de setenta cuadros</strong> y retrata a <strong>Marguerite Gachet</strong>. Una <strong>novela vibrante</strong> sobre el anhelo de belleza, la fragilidad y el pulso apasionado de la creación.»
+            <div class="cta-row">
+              <a href="#" class="btn-primary">
+                <span>EMPEZAR A LEER</span>
+                <img src="/img/start-to-read.svg" alt="Ver" class="btn-icon" />
+              </a>
+            </div>
+
+            <!-- Opciones (dos selects de ejemplo) -->
+            <div class="options-row">
+              <!-- Formato de libros -->
+              <div class="field">
+                <label>Formato de libros</label>
+
+                <div
+                  class="custom-select"
+                  data-name="formato"
+                  tabindex="0"
+                  role="listbox"
+                  aria-label="Formato de libros"
+                >
+                  <div
+                    class="select-button"
+                    role="button"
+                    aria-expanded="false"
+                  >
+                    <span class="selected">Elige formato</span>
+                    <span class="right-chunk" aria-hidden="true">
+                      <svg class="caret" viewBox="0 0 24 24">
+                        <path d="M6 9l6 6 6-6" />
+                      </svg>
+                    </span>
+                  </div>
+
+                  <ul class="options">
+                    <!-- 👇 Placeholder como primera opción -->
+                    <li
+                      role="option"
+                      tabindex="0"
+                      class="is-placeholder"
+                      data-value=""
+                    >
+                      Elige formato
+                    </li>
+
+                    <li role="option" tabindex="0" data-value="tapa-dura">
+                      Tapa dura
+                    </li>
+                    <li role="option" tabindex="0" data-value="ebook">eBook</li>
+                    <li role="option" tabindex="0" data-value="audiolibro">
+                      Audiolibro
+                    </li>
+                  </ul>
+
+                  <input type="hidden" name="formato" value="" />
+                </div>
+              </div>
+
+              <!-- Tiendas -->
+              <div class="field">
+                <label>Tiendas</label>
+
+                <!-- 👇 aquí el cambio: data-reset="true" (y opcional data-placeholder) -->
+                <div
+                  class="custom-select"
+                  data-name="tienda"
+                  data-reset="true"
+                  data-placeholder="COMPRAR EN …."
+                  tabindex="0"
+                  role="listbox"
+                  aria-label="Tiendas"
+                >
+                  <div
+                    class="select-button"
+                    role="button"
+                    aria-expanded="false"
+                  >
+                    <span class="selected">COMPRAR EN ….</span>
+
+                    <!-- Zona derecha: línea + caret -->
+                    <span class="right-chunk" aria-hidden="true">
+                      <svg class="caret" viewBox="0 0 24 24">
+                        <path d="M6 9l6 6 6-6" />
+                      </svg>
+                    </span>
+                  </div>
+
+                  <ul class="options">
+                    <li
+                      role="option"
+                      tabindex="0"
+                      data-value="libelli"
+                      data-href="https://www.libelli.com.mx/libro/el-ultimo-van-gogh_411182"
+                    >
+                      Libelli
+                    </li>
+                    <li
+                      role="option"
+                      tabindex="0"
+                      data-value="gandhi"
+                      data-href="https://www.gandhi.com.mx/el-ultimo-van-gogh-9786073912099/p"
+                    >
+                      Gandhi
+                    </li>
+                    <li
+                      role="option"
+                      tabindex="0"
+                      data-value="amazon"
+                      data-href="https://www.amazon.com.mx/%C3%BAltimo-Van-Gogh-Alyson-Richman/dp/6073911408"
+                    >
+                      Amazon
+                    </li>
+                  </ul>
+
+                  <!-- hidden para formularios -->
+                  <input type="hidden" name="tienda" value="" />
+                </div>
+              </div>
+
+              <ul class="options">
+                <li
+                  role="option"
+                  tabindex="0"
+                  data-value="libelli"
+                  data-href="https://www.libelli.com.mx/libro/el-ultimo-van-gogh_411182"
+                >
+                  Libelli
+                </li>
+
+                <li
+                  role="option"
+                  tabindex="0"
+                  data-value="gandhi"
+                  data-href="https://www.gandhi.com.mx/el-ultimo-van-gogh-9786073912099/p"
+                >
+                  Gandhi
+                </li>
+
+                <li
+                  role="option"
+                  tabindex="0"
+                  data-value="amazon"
+                  data-href="https://www.amazon.com.mx/%C3%BAltimo-Van-Gogh-Alyson-Richman/dp/6073911408/ref=sr_1_1?crid=3OYHIZ53AOXL2&amp;dib=eyJ2IjoiMSJ9.hkiRRqz80HLogs8tiRLFZhgdGuLfS04l79j__Q4lvVB9Fp1AhjlOU_8ikF98vERRL4zm6sKNFqF76b3osuMTho-SnGkUECaOYatS8gC3DgwDfM-9u7OCWywc0inT3wWHPgbg_GRTTFNfGh3vH9O3i62pwbIcCeerpBeJdauf9WE_rfIW-daiWAb5IdOxFYkL6Spo9Dj_9NfFiGGN65gywZzSrhH-SjjT3gaqXtyJEz3ktqnMCSsifOB_Oq8IyCRquSKVXOUAM_gJdl5-Ii3lckIYv0uoAQy2iUm8KuCTTQ8.XR7mKzSHQDjMalsvEloj-5RbjX8Q6clIYdgCpmEc1C8&amp;dib_tag=se&amp;keywords=el+ultimo+van+gogh+libro&amp;qid=1757081788&amp;sprefix=el+ultimo+van+gogh%2Caps%2C952&amp;sr=8-1&amp;ufe=app_do%3Aamzn1.fos.de93fa6a-174c-4df7-be7c-5bc8e9c5a71b"
+                >
+                  Amazon
+                </li>
+              </ul>
+
+              <!-- Valor para formularios -->
+              <input type="hidden" name="tienda" value="" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+     <!-- ====== MODALES ====== -->
+<div id="modal-quienes" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-content" tabindex="-1">
+    <div class="modal-header">
+      <h2 class="modal-title">Quiénes somos</h2>
+      <button class="modal-close" aria-label="Cerrar modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p>
+  Somos un proyecto dedicado a difundir la vida y obra de Vincent van Gogh.
+  Nuestro objetivo es acercar al público a su legado artístico y humano
+  mediante exposiciones, charlas, recursos educativos y publicaciones.
+</p>
+<p>
+  Creemos que el arte transforma vidas, y buscamos crear un espacio accesible
+  para estudiantes, investigadores y amantes del arte.
 </p>
 
-
-          <div class="cta-row">
-          <a href="#" class="btn-primary">
-        <span>EMPEZAR A LEER</span>
-         <img src="/img/start-to-read.svg" alt="Ver" class="btn-icon">
-        </a>
-        </div>
-         
-        <!-- Opciones (dos selects de ejemplo) -->
-<div class="options-row">
-<!-- Formato de libros -->
-<div class="field">
-  <label>Formato de libros</label>
-
-  <div class="custom-select" data-name="formato" tabindex="0" role="listbox" aria-label="Formato de libros">
-    <div class="select-button" role="button" aria-expanded="false">
-      <span class="selected">Elige formato</span>
-      <span class="right-chunk" aria-hidden="true">
-        <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" /></svg>
-      </span>
     </div>
-
-    <ul class="options">
-      <!-- 👇 Placeholder como primera opción -->
-      <li role="option" tabindex="0" class="is-placeholder" data-value="">Elige formato</li>
-
-      <li role="option" tabindex="0" data-value="tapa-dura">Tapa dura</li>
-      <li role="option" tabindex="0" data-value="ebook">eBook</li>
-      <li role="option" tabindex="0" data-value="audiolibro">Audiolibro</li>
-    </ul>
-
-    <input type="hidden" name="formato" value="">
   </div>
 </div>
 
-
-<!-- Tiendas -->
-<div class="field">
-  <label>Tiendas</label>
-
-  <!-- 👇 aquí el cambio: data-reset="true" (y opcional data-placeholder) -->
-  <div class="custom-select"
-       data-name="tienda"
-       data-reset="true"
-       data-placeholder="COMPRAR EN …."
-       tabindex="0"
-       role="listbox"
-       aria-label="Tiendas">
-
-    <div class="select-button" role="button" aria-expanded="false">
-      <span class="selected">COMPRAR EN ….</span>
-
-      <!-- Zona derecha: línea + caret -->
-      <span class="right-chunk" aria-hidden="true">
-        <svg class="caret" viewBox="0 0 24 24">
-          <path d="M6 9l6 6 6-6" />
-        </svg>
-      </span>
+<div id="modal-vangogh" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-content" tabindex="-1">
+    <div class="modal-header">
+      <h2 class="modal-title">Van Gogh</h2>
+      <button class="modal-close" aria-label="Cerrar modal">&times;</button>
     </div>
+    <div class="modal-body">
+      <p>
+  Vincent van Gogh (1853–1890) fue un pintor postimpresionista holandés,
+  considerado uno de los artistas más influyentes de la historia del arte.
+</p>
+<p>
+  Aunque en vida vendió muy pocas obras, tras su muerte se convirtió en
+  una figura clave en la historia del arte moderno gracias a su estilo único,
+  su uso del color y la intensidad emocional de sus pinturas.
+</p>
 
-    <ul class="options">
-      <li role="option" tabindex="0" data-value="libelli"
-          data-href="https://www.libelli.com.mx/libro/el-ultimo-van-gogh_411182">Libelli</li>
-      <li role="option" tabindex="0" data-value="gandhi"
-          data-href="https://www.gandhi.com.mx/el-ultimo-van-gogh-9786073912099/p">Gandhi</li>
-      <li role="option" tabindex="0" data-value="amazon"
-          data-href="https://www.amazon.com.mx/%C3%BAltimo-Van-Gogh-Alyson-Richman/dp/6073911408">Amazon</li>
-    </ul>
-
-    <!-- hidden para formularios -->
-    <input type="hidden" name="tienda" value="">
+    </div>
   </div>
 </div>
 
+<div id="modal-cartas" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-content" tabindex="-1">
+    <div class="modal-header">
+      <h2 class="modal-title">Cartas De Teo</h2>
+      <button class="modal-close" aria-label="Cerrar modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p>
+  Las cartas que Vincent escribió a su hermano Theo constituyen uno de los
+  documentos más valiosos para comprender su vida y su proceso creativo.
+</p>
+<p>
+  A través de ellas descubrimos no solo los detalles técnicos de su pintura,
+  sino también sus luchas internas, su visión sobre el arte y su relación con
+  la sociedad de su época.
+</p>
 
-     <ul class="options">
-  <li role="option" tabindex="0"
-      data-value="libelli"
-      data-href="https://www.libelli.com.mx/libro/el-ultimo-van-gogh_411182">
-    Libelli
-  </li>
+    </div>
+  </div>
+</div>
 
-  <li role="option" tabindex="0"
-      data-value="gandhi"
-      data-href="https://www.gandhi.com.mx/el-ultimo-van-gogh-9786073912099/p">
-    Gandhi
-  </li>
-
-  <li role="option" tabindex="0"
-      data-value="amazon"
-      data-href="https://www.amazon.com.mx/%C3%BAltimo-Van-Gogh-Alyson-Richman/dp/6073911408/ref=sr_1_1?crid=3OYHIZ53AOXL2&amp;dib=eyJ2IjoiMSJ9.hkiRRqz80HLogs8tiRLFZhgdGuLfS04l79j__Q4lvVB9Fp1AhjlOU_8ikF98vERRL4zm6sKNFqF76b3osuMTho-SnGkUECaOYatS8gC3DgwDfM-9u7OCWywc0inT3wWHPgbg_GRTTFNfGh3vH9O3i62pwbIcCeerpBeJdauf9WE_rfIW-daiWAb5IdOxFYkL6Spo9Dj_9NfFiGGN65gywZzSrhH-SjjT3gaqXtyJEz3ktqnMCSsifOB_Oq8IyCRquSKVXOUAM_gJdl5-Ii3lckIYv0uoAQy2iUm8KuCTTQ8.XR7mKzSHQDjMalsvEloj-5RbjX8Q6clIYdgCpmEc1C8&amp;dib_tag=se&amp;keywords=el+ultimo+van+gogh+libro&amp;qid=1757081788&amp;sprefix=el+ultimo+van+gogh%2Caps%2C952&amp;sr=8-1&amp;ufe=app_do%3Aamzn1.fos.de93fa6a-174c-4df7-be7c-5bc8e9c5a71b">
-    Amazon
-  </li>
+<div id="modal-obras" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-content" tabindex="-1">
+    <div class="modal-header">
+      <h2 class="modal-title">Obras</h2>
+      <button class="modal-close" aria-label="Cerrar modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <ul>
+  <li><strong>Los girasoles</strong> (1888)</li>
+  <li><strong>La noche estrellada</strong> (1889)</li>
+  <li><strong>Los comedores de patatas</strong> (1885)</li>
+  <li><strong>Autorretratos</strong> (1886–1889)</li>
+  <li><strong>La habitación en Arlés</strong> (1888)</li>
 </ul>
+<p>
+  Cada una refleja etapas distintas de su vida y su experimentación con la
+  luz, el color y la emoción.
+</p>
 
-
-      <!-- Valor para formularios -->
-      <input type="hidden" name="tienda" value="">
     </div>
   </div>
 </div>
 
-       
-
-
-
-      
-    </section>
-  </main>
-
-  <!-- FOOTER (blanco) -->
-  <footer class="site-footer">
-    
-    <div class="container footer-inner">
-        <div class="share">
-            <span>Comparte este libro</span>
-            <a href="#" aria-label="Compartir en Facebook" class="icon-fb">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.33 90.62" width="28" height="28">
-    <path d="M45.16,0C20.22,0,0,20.29,0,45.31s20.22,45.31,45.16,45.31,45.16-20.29,45.16-45.31S70.11,0,45.16,0ZM57.6,46.01h-8.28v27.05h0c-.27.01-.44.03-.61.03-3.67,0-7.34-.01-11.01.01-.52,0-.66-.14-.66-.66.01-8.55.01-17.11.01-25.66v-.74h-5.92v-9.13h.58c1.61,0,3.22-.01,4.83.01.41,0,.52-.12.52-.52-.02-2.4-.02-4.8,0-7.2.01-1.68.28-3.31,1.05-4.82,1.11-2.14,2.86-3.52,5.07-4.38,1.8-.71,3.71-.97,5.62-1,3.11-.04,6.23-.02,9.35-.03.29,0,.53-.01.53.4-.01,2.95-.01,5.91-.01,8.86,0,.03-.01.06-.05.2h-.59c-1.93,0-3.87-.01-5.8,0-1.12,0-2.02.45-2.59,1.43-.17.29-.28.67-.28,1.01-.03,1.83,0,3.65-.02,5.48,0,.43.13.55.55.55,2.69-.02,5.37-.01,8.06-.01h.78c-.38,3.07-.74,6.08-1.12,9.12Z"/>
-  </svg>
-</a>
-<a href="#" aria-label="Compartir en X" class="icon-x">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.33 90.62" width="28" height="28">
-    <polygon points="23.88 22.59 58.7 69.16 66.59 69.16 31.76 22.59 23.88 22.59"/>
-    <path d="M45.16,0C20.22,0,0,20.29,0,45.31s20.22,45.31,45.16,45.31,45.16-20.29,45.16-45.31S70.11,0,45.16,0ZM56.84,72.88l-15.85-21.2-19.62,21.2h-5.04l22.41-24.21-22.28-29.78h0s17.17,0,17.17,0l14.6,19.53,18.07-19.53h5.04l-20.86,22.54,23.53,31.46h-17.17Z"/>
-  </svg>
-</a>
-
-          </div>
-      
+<div id="modal-libros" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-content" tabindex="-1">
+    <div class="modal-header">
+      <h2 class="modal-title">Libros</h2>
+      <button class="modal-close" aria-label="Cerrar modal">&times;</button>
     </div>
-    
-  </footer>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  var selects = Array.prototype.slice.call(document.querySelectorAll('.custom-select'));
+    <div class="modal-body">
+      <ul>
+  <li><em>Cartas a Theo</em> – Selección de correspondencia entre los hermanos.</li>
+  <li><em>Lust for Life</em> – Novela biográfica de Irving Stone.</li>
+  <li><em>Van Gogh: The Life</em> – Steven Naifeh y Gregory White Smith.</li>
+  <li><em>El último Van Gogh</em> – Alyson Richman.</li>
+</ul>
+<p>
+  Estas lecturas ofrecen diferentes perspectivas sobre la vida y el arte de
+  Vincent van Gogh.
+</p>
 
-  selects.forEach(function(sel){
-    var btn   = sel.querySelector('.select-button');
-    var menu  = sel.querySelector('.options');
-    var label = sel.querySelector('.selected');
-    var input = sel.querySelector('input[type="hidden"]');
+    </div>
+  </div>
+</div>
+         
+    <!-- FOOTER (blanco) -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="share">
+          <span>Comparte este libro</span>
+          <a href="#" aria-label="Compartir en Facebook" class="icon-fb">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 90.33 90.62"
+              width="28"
+              height="28"
+            >
+              <path
+                d="M45.16,0C20.22,0,0,20.29,0,45.31s20.22,45.31,45.16,45.31,45.16-20.29,45.16-45.31S70.11,0,45.16,0ZM57.6,46.01h-8.28v27.05h0c-.27.01-.44.03-.61.03-3.67,0-7.34-.01-11.01.01-.52,0-.66-.14-.66-.66.01-8.55.01-17.11.01-25.66v-.74h-5.92v-9.13h.58c1.61,0,3.22-.01,4.83.01.41,0,.52-.12.52-.52-.02-2.4-.02-4.8,0-7.2.01-1.68.28-3.31,1.05-4.82,1.11-2.14,2.86-3.52,5.07-4.38,1.8-.71,3.71-.97,5.62-1,3.11-.04,6.23-.02,9.35-.03.29,0,.53-.01.53.4-.01,2.95-.01,5.91-.01,8.86,0,.03-.01.06-.05.2h-.59c-1.93,0-3.87-.01-5.8,0-1.12,0-2.02.45-2.59,1.43-.17.29-.28.67-.28,1.01-.03,1.83,0,3.65-.02,5.48,0,.43.13.55.55.55,2.69-.02,5.37-.01,8.06-.01h.78c-.38,3.07-.74,6.08-1.12,9.12Z"
+              />
+            </svg>
+          </a>
+          <a href="#" aria-label="Compartir en X" class="icon-x">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 90.33 90.62"
+              width="28"
+              height="28"
+            >
+              <polygon
+                points="23.88 22.59 58.7 69.16 66.59 69.16 31.76 22.59 23.88 22.59"
+              />
+              <path
+                d="M45.16,0C20.22,0,0,20.29,0,45.31s20.22,45.31,45.16,45.31,45.16-20.29,45.16-45.31S70.11,0,45.16,0ZM56.84,72.88l-15.85-21.2-19.62,21.2h-5.04l22.41-24.21-22.28-29.78h0s17.17,0,17.17,0l14.6,19.53,18.07-19.53h5.04l-20.86,22.54,23.53,31.46h-17.17Z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var selects = Array.prototype.slice.call(
+          document.querySelectorAll(".custom-select")
+        );
 
-    // Guarda el placeholder inicial
-    var placeholder = label ? label.textContent.trim() : '';
-    sel.dataset.placeholder = placeholder;
+        selects.forEach(function (sel) {
+          var btn = sel.querySelector(".select-button");
+          var menu = sel.querySelector(".options");
+          var label = sel.querySelector(".selected");
+          var input = sel.querySelector('input[type="hidden"]');
 
-    function setOpen(state){
-      if (state) {
-        sel.classList.add('open');
-        if (btn) btn.setAttribute('aria-expanded', 'true');
-      } else {
-        sel.classList.remove('open');
-        if (btn) btn.setAttribute('aria-expanded', 'false');
-      }
-    }
+          // Guarda el placeholder inicial
+          var placeholder = label ? label.textContent.trim() : "";
+          sel.dataset.placeholder = placeholder;
 
-    if (btn) {
-      btn.addEventListener('click', function(e){
-        e.preventDefault();
-        setOpen(!sel.classList.contains('open'));
+          function setOpen(state) {
+            if (state) {
+              sel.classList.add("open");
+              if (btn) btn.setAttribute("aria-expanded", "true");
+            } else {
+              sel.classList.remove("open");
+              if (btn) btn.setAttribute("aria-expanded", "false");
+            }
+          }
+
+          if (btn) {
+            btn.addEventListener("click", function (e) {
+              e.preventDefault();
+              setOpen(!sel.classList.contains("open"));
+            });
+            btn.addEventListener("keydown", function (e) {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                setOpen(!sel.classList.contains("open"));
+              } else if (e.key === "Escape") setOpen(false);
+            });
+          }
+
+          if (menu) {
+            menu.addEventListener("click", function (e) {
+              var li = e.target.closest
+                ? e.target.closest('li[role="option"]')
+                : null;
+              if (!li) return;
+
+              var text = li.textContent.trim();
+              var value = li.getAttribute("data-value") || text;
+              var href = li.getAttribute("data-href");
+
+              var shouldReset = sel.getAttribute("data-reset") === "true";
+
+              // Actualiza etiqueta y hidden según reset
+              if (label)
+                label.textContent = shouldReset
+                  ? sel.dataset.placeholder
+                  : text;
+              if (input) input.value = shouldReset ? "" : value;
+
+              setOpen(false);
+
+              // Navegación (nueva pestaña)
+              if (href) window.open(href, "_blank", "noopener");
+
+              if (btn) btn.focus();
+            });
+
+            // Teclado sobre opciones
+            menu.addEventListener("keydown", function (e) {
+              if (
+                (e.key === "Enter" || e.key === " ") &&
+                document.activeElement.matches('li[role="option"]')
+              ) {
+                e.preventDefault();
+                document.activeElement.click();
+              }
+              if (e.key === "Escape") setOpen(false);
+            });
+          }
+        });
+
+        // Cerrar al hacer clic fuera
+        document.addEventListener("click", function (e) {
+          Array.prototype.forEach.call(
+            document.querySelectorAll(".custom-select.open"),
+            function (openSel) {
+              if (!openSel.contains(e.target)) {
+                openSel.classList.remove("open");
+                var b = openSel.querySelector(".select-button");
+                if (b) b.setAttribute("aria-expanded", "false");
+              }
+            }
+          );
+        });
+
+        // Cerrar con Escape
+        document.addEventListener("keydown", function (e) {
+          if (e.key !== "Escape") return;
+          Array.prototype.forEach.call(
+            document.querySelectorAll(".custom-select.open"),
+            function (openSel) {
+              if (openSel.contains(document.activeElement)) {
+                openSel.classList.remove("open");
+                var b = openSel.querySelector(".select-button");
+                if (b) {
+                  b.setAttribute("aria-expanded", "false");
+                  b.focus();
+                }
+              }
+            }
+          );
+        });
       });
-      btn.addEventListener('keydown', function(e){
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpen(!sel.classList.contains('open')); }
-        else if (e.key === 'Escape') setOpen(false);
-      });
-    }
 
-    if (menu) {
-      menu.addEventListener('click', function(e){
-        var li = e.target.closest ? e.target.closest('li[role="option"]') : null;
-        if (!li) return;
+      (function () {
+        const btn = document.querySelector(".nav-toggle");
+        const nav = document.getElementById("primary-nav");
+        if (!btn || !nav) return;
 
-        var text  = li.textContent.trim();
-        var value = li.getAttribute('data-value') || text;
-        var href  = li.getAttribute('data-href');
+        btn.addEventListener("click", () => {
+          const isOpen = btn.getAttribute("aria-expanded") === "true";
+          btn.setAttribute("aria-expanded", String(!isOpen));
+          nav.classList.toggle("open", !isOpen);
+          document.body.classList.toggle("scroll-lock", !isOpen);
+        });
 
-        var shouldReset = sel.getAttribute('data-reset') === 'true';
+        nav.addEventListener("click", (e) => {
+          if (e.target.matches("a")) {
+            btn.setAttribute("aria-expanded", "false");
+            nav.classList.remove("open");
+            document.body.classList.remove("scroll-lock");
+          }
+        });
+      })();
 
-        // Actualiza etiqueta y hidden según reset
-        if (label) label.textContent = shouldReset ? sel.dataset.placeholder : text;
-        if (input) input.value = shouldReset ? '' : value;
+// ====== MODALES (abre con data-modal y cierra con X/fondo/Esc) ======
+(function () {
+  const qs  = (s, sc=document) => sc.querySelector(s);
+  const qsa = (s, sc=document) => Array.from(sc.querySelectorAll(s));
 
-        setOpen(false);
+  let lastFocused = null;
 
-        // Navegación (nueva pestaña)
-        if (href) window.open(href, '_blank', 'noopener');
+  const lockScroll   = () => document.body.classList.add('modal-open');
+  const unlockScroll = () => document.body.classList.remove('modal-open');
 
-        if (btn) btn.focus();
-      });
+  const openModal = (modal) => {
+    if (!modal) return;
+    lastFocused = document.activeElement;
+    modal.classList.add('active');
+    modal.removeAttribute('aria-hidden');
+    lockScroll();
+    const content = qs('.modal-content', modal);
+    content && content.focus();
+  };
 
-      // Teclado sobre opciones
-      menu.addEventListener('keydown', function(e){
-        if ((e.key === 'Enter' || e.key === ' ') && document.activeElement.matches('li[role="option"]')) {
-          e.preventDefault();
-          document.activeElement.click();
-        }
-        if (e.key === 'Escape') setOpen(false);
-      });
-    }
+  const closeModal = (modal) => {
+    if (!modal) return;
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    // si no queda ningún modal abierto, libera el scroll
+    if (!qsa('.modal.active').length) unlockScroll();
+    if (lastFocused && lastFocused.focus) lastFocused.focus();
+  };
+
+  // Abrir desde links con data-modal
+  qsa('[data-modal]').forEach(link => {
+    link.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const id = link.getAttribute('data-modal');
+      const modal = document.getElementById(id);
+      openModal(modal);
+    });
   });
 
-  // Cerrar al hacer clic fuera
-  document.addEventListener('click', function(e){
-    Array.prototype.forEach.call(document.querySelectorAll('.custom-select.open'), function(openSel){
-      if (!openSel.contains(e.target)) {
-        openSel.classList.remove('open');
-        var b = openSel.querySelector('.select-button');
-        if (b) b.setAttribute('aria-expanded', 'false');
-      }
+  // Cerrar por botón X, click en overlay y botones dentro con data-modal-close
+  qsa('.modal').forEach(modal => {
+    modal.addEventListener('click', (e)=>{
+      if (e.target.classList.contains('modal')) closeModal(modal);
+    });
+    qsa('.modal-close', modal).forEach(btn=>{
+      btn.addEventListener('click', ()=> closeModal(modal));
+    });
+    qsa('[data-modal-close]', modal).forEach(btn=>{
+      btn.addEventListener('click', ()=> closeModal(modal));
     });
   });
 
   // Cerrar con Escape
-  document.addEventListener('keydown', function(e){
-    if (e.key !== 'Escape') return;
-    Array.prototype.forEach.call(document.querySelectorAll('.custom-select.open'), function(openSel){
-      if (openSel.contains(document.activeElement)) {
-        openSel.classList.remove('open');
-        var b = openSel.querySelector('.select-button');
-        if (b) { b.setAttribute('aria-expanded', 'false'); b.focus(); }
-      }
-    });
-  });
-});
-
-(function(){
-  const btn = document.querySelector('.nav-toggle');
-  const nav = document.getElementById('primary-nav');
-  if(!btn || !nav) return;
-
-  btn.addEventListener('click', () => {
-    const isOpen = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!isOpen));
-    nav.classList.toggle('open', !isOpen);
-    document.body.classList.toggle('scroll-lock', !isOpen);
-  });
-
-  nav.addEventListener('click', (e) => {
-    if(e.target.matches('a')) {
-      btn.setAttribute('aria-expanded', 'false');
-      nav.classList.remove('open');
-      document.body.classList.remove('scroll-lock');
+  document.addEventListener('keydown', (e)=>{
+    if (e.key === 'Escape'){
+      const open = qsa('.modal.active');
+      if (open.length) closeModal(open[open.length-1]);
     }
   });
 })();
 
-</script>
 
 
-</body>
+    </script>
+  </body>
 </html>
