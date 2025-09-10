@@ -532,20 +532,37 @@
   const openModal = (modal) => {
     if (!modal) return;
     lastFocused = document.activeElement;
+    
+    // Fase 1: Mostrar el modal (display: block)
     modal.classList.add('active');
     modal.removeAttribute('aria-hidden');
     lockScroll();
+    
+    // Fase 2: Después de un pequeño delay, agregar la animación
+    setTimeout(() => {
+      modal.classList.add('show');
+    }, 10);
+    
     const content = qs('.modal-content', modal);
     content && content.focus();
   };
 
   const closeModal = (modal) => {
     if (!modal) return;
-    modal.classList.remove('active');
-    modal.setAttribute('aria-hidden', 'true');
-    // si no queda ningún modal abierto, libera el scroll
-    if (!qsa('.modal.active').length) unlockScroll();
-    if (lastFocused && lastFocused.focus) lastFocused.focus();
+    
+    // Fase 1: Quitar la animación (inicia el cierre)
+    modal.classList.remove('show');
+    
+    // Fase 2: Después de que termine la transición, ocultar completamente
+    setTimeout(() => {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      
+      // Si no queda ningún modal abierto, libera el scroll
+      if (!qsa('.modal.active').length) unlockScroll();
+      
+      if (lastFocused && lastFocused.focus) lastFocused.focus();
+    }, 380); // 380ms coincide con la duración de la transición (.38s)
   };
 
   // Abrir desde links con data-modal
@@ -579,8 +596,6 @@
     }
   });
 })();
-
-
 
     </script>
   </body>
