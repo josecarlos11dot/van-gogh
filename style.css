@@ -763,11 +763,10 @@ body.scroll-lock {
 /* Panel: centrado, con márgenes laterales y debajo del header */
 .modal-content{
   background: #fff;
-  width: min(800px, 90%);
+  width: 95%;
   margin: 0 auto;
   position: relative;
   top: var(--header-h);        /* arranca justo donde termina el header */
-  border-radius: 8px;
   border-top: 4px solid var(--accent);
   box-shadow: 0 6px 20px rgba(0,0,0,.14);
   overflow: hidden;            /* necesario para el efecto y el scroll interno */
@@ -837,5 +836,35 @@ body.modal-open{ overflow: hidden; }
   }
   .modal-body{ 
     max-height: calc(80vh - 18px - 18px - 54px); 
+  }
+}
+
+/* Estilos para el video responsivo */
+.video-container {
+  display: flex; 
+  justify-content: center; 
+  margin: 20px 0;
+}
+
+.video-container iframe {
+  width: 800px;
+  height: 450px; /* 16:9 ratio: 800 * 9/16 = 450 */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .video-container iframe {
+    width: 90vw;
+    height: calc(90vw * 9/16); /* proporción 16:9 correcta */
+  }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .video-container iframe {
+    width: 95vw;
+    height: calc(95vw * 9/16); /* proporción 16:9 correcta */
   }
 }
