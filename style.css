@@ -748,29 +748,33 @@ body.scroll-lock {
 }
 
 /* ====== Modales: barrido vertical tipo cortina ====== */
-:root { --header-h: 120px; }
+:root {
+  --header-h: 120px;
+}
 
 /* Overlay */
-.modal{
+.modal {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.4);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 1000;
 }
-.modal.active { display: block; }  /* solo muestra el overlay (1a fase) */
+.modal.active {
+  display: block;
+} /* solo muestra el overlay (1a fase) */
 
 /* Panel: centrado, con márgenes laterales y debajo del header */
-.modal-content{
+.modal-content {
   background: #fff;
   width: 95%;
   margin: 0 auto;
   position: relative;
-  top: var(--header-h);        /* arranca justo donde termina el header */
+  top: var(--header-h); /* arranca justo donde termina el header */
   border-top: 4px solid var(--accent);
-  box-shadow: 0 6px 20px rgba(0,0,0,.14);
-  overflow: hidden;            /* necesario para el efecto y el scroll interno */
-  max-height: 80vh;            /* altura límite del panel */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.14);
+  overflow: hidden; /* necesario para el efecto y el scroll interno */
+  max-height: 80vh; /* altura límite del panel */
   padding: 22px;
 
   /* Estado inicial: "cortina" cerrada */
@@ -782,67 +786,71 @@ body.scroll-lock {
 }
 
 /* Cortina abierta: cuando tiene ambas clases .active Y .show */
-.modal.active.show .modal-content{
+.modal.active.show .modal-content {
   transform: scaleY(1);
   opacity: 1;
 }
 
 /* Header y cuerpo del modal */
-.modal-header{
-  display: flex; 
-  align-items: center; 
+.modal-header {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 16px; 
-  margin-bottom: 10px; 
-  border-bottom: 1px solid var(--line); 
+  gap: 16px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--line);
   padding-bottom: 8px;
 }
-.modal-title{ 
-  margin: 0; 
-  font-size: 1.25rem; 
-  font-weight: 700; 
+.modal-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
-.modal-close{
-  appearance: none; 
-  background: #fff; 
-  border: 1px solid var(--line); 
+.modal-close {
+  appearance: none;
+  background: #fff;
+  border: 1px solid var(--line);
   border-radius: 6px;
-  width: 36px; 
-  height: 36px; 
-  display: inline-flex; 
-  align-items: center; 
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  cursor: pointer; 
-  font-size: 20px; 
+  cursor: pointer;
+  font-size: 20px;
   line-height: 1;
 }
-.modal-close:hover{ background: #f5f5f5; }
+.modal-close:hover {
+  background: #f5f5f5;
+}
 
-.modal-body{
-  line-height: 1.6; 
+.modal-body {
+  line-height: 1.6;
   color: #374151;
   max-height: calc(80vh - 22px - 22px - 54px);
   overflow: auto;
 }
 
 /* Bloquear scroll del fondo */
-body.modal-open{ overflow: hidden; }
+body.modal-open {
+  overflow: hidden;
+}
 
 /* Móvil */
-@media (max-width:480px){
-  .modal-content{ 
-    width: min(720px, 94%); 
-    padding: 18px; 
+@media (max-width: 480px) {
+  .modal-content {
+    width: min(720px, 94%);
+    padding: 18px;
   }
-  .modal-body{ 
-    max-height: calc(80vh - 18px - 18px - 54px); 
+  .modal-body {
+    max-height: calc(80vh - 18px - 18px - 54px);
   }
 }
 
 /* Estilos para el video responsivo */
 .video-container {
-  display: flex; 
-  justify-content: center; 
+  display: flex;
+  justify-content: center;
   margin: 20px 0;
 }
 
@@ -857,7 +865,7 @@ body.modal-open{ overflow: hidden; }
 @media (max-width: 768px) {
   .video-container iframe {
     width: 90vw;
-    height: calc(90vw * 9/16); /* proporción 16:9 correcta */
+    height: calc(90vw * 9 / 16); /* proporción 16:9 correcta */
   }
 }
 
@@ -865,6 +873,223 @@ body.modal-open{ overflow: hidden; }
 @media (max-width: 480px) {
   .video-container iframe {
     width: 95vw;
-    height: calc(95vw * 9/16); /* proporción 16:9 correcta */
+    height: calc(95vw * 9 / 16); /* proporción 16:9 correcta */
   }
+}
+/* Secciones */
+/* Específico para modal de tienda */
+#modal-tienda .modal-body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+@media (max-width: 768px) {
+  #modal-tienda .modal-body {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  #modal-tienda .modal-body {
+    padding: 0 10px;
+  }
+}
+.section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  margin: 0 0 20px 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent);
+  border-bottom: 2px solid var(--band);
+  padding-bottom: 8px;
+}
+
+/* Grid de tarjetas para libros */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+/* Grid para multimedia (lego, película, episodio) */
+.multimedia-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+/* Tarjeta base - aspecto vertical */
+.product-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 280px; /* Altura fija para aspecto de tarjeta */
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Tarjeta horizontal para libros y lego */
+.horizontal-card {
+  display: flex;
+  height: 200px; /* Más baja pero sigue siendo una tarjeta */
+}
+
+.horizontal-card .product-image {
+  width: 150px;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.horizontal-card .product-info {
+  padding: 14px; /* Reducido el padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+/* Tarjeta vertical para videos */
+/* Tarjeta vertical para videos */
+.vertical-card {
+  display: flex;
+  flex-direction: column;
+  height: auto; /* ← CAMBIO: Se ajusta automáticamente al contenido */
+}
+
+.vertical-card .video-container {
+  height: 500px; /* ← CAMBIO: Video con altura de 500px */
+  position: relative;
+  background: #000;
+  flex-shrink: 0;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+}
+
+.vertical-card .video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.vertical-card .product-info {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Contenido de las tarjetas */
+.product-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--accent);
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.product-author {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.product-description {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  flex: 1;
+}
+
+.product-link {
+  display: inline-block;
+  text-decoration: none;
+  background: var(--band);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  transition: background 0.2s ease, transform 0.1s ease;
+  align-self: flex-start;
+}
+
+.product-link:hover {
+  background: #b8854f;
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .books-grid,
+  .multimedia-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .horizontal-card {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .horizontal-card .product-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .vertical-card {
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    width: 98%;
+    margin: 10px auto;
+    padding: 16px;
+  }
+
+  .product-card {
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  #modal-tienda .modal-body {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  #modal-tienda .modal-body {
+    padding: 0 10px;
+  }
+  .vertical-card .video-container {
+    height: 200px; /* ← CAMBIO: Video con altura de 200px */
+    position: relative;
+    background: #000;
+    flex-shrink: 0;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+  }
+}
+
+/* Grid de tarjetas para cartas */
+.cartas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
