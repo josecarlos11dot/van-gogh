@@ -161,6 +161,12 @@ body {
   margin-bottom: 0%;
 }
 
+.title-image {
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
 /* Autor */
 .autor-label {
   font-size: 27px;
