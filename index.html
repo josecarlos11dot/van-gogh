@@ -435,7 +435,6 @@
         </div>
       </div>
     </div>
-
     <div
       id="modal-cartas"
       class="modal"
@@ -449,64 +448,68 @@
           <button class="modal-close" aria-label="Cerrar modal">&times;</button>
         </div>
         <div class="modal-body">
-  <!-- Sección Cartas a Theo -->
-  <div class="section">
-    
-    <div class="cartas-grid">
-      
-      <!-- Carta 1 -->
-      <div class="product-card horizontal-card">
-        <img src="img/carta-1.jpg" alt="Carta 1 a Theo" class="product-image" />
-        <div class="product-info">
-          <div>
-            <div class="product-title">[Título/Fecha de la carta]</div>
-            <div class="product-author">[Lugar, Fecha]</div>
-            <div class="product-description">[Extracto o descripción breve de la carta]</div>
+          <!-- Sección Cartas a Theo -->
+          <div class="section">
+            <div class="cartas-mosaic">
+              <img
+                src="./img/875.png"
+                alt="Carta 1 a Theo"
+                class="carta-image"
+                onclick="openZoom(this)"
+              />
+              <img
+                src="./img/875-b.png"
+                alt="Carta 2 a Theo"
+                class="carta-image"
+                onclick="openZoom(this)"
+              />
+              <img
+                src="./img/880.png"
+                alt="Carta 3 a Theo"
+                class="carta-image"
+                onclick="openZoom(this)"
+              />
+              <img
+                src="./img/880-b.png"
+                alt="Carta 4 a Theo"
+                class="carta-image"
+                onclick="openZoom(this)"
+              />
+              <img
+                src="./img/887.png"
+                alt="Carta 5 a Theo"
+                class="carta-image"
+                onclick="openZoom(this)"
+              />
+              <img
+                src="./img/902.png"
+                alt="Carta 6 a Theo"
+                class="carta-image"
+                onclick="openZoom(this)"
+              />
+              <img
+                src="./img/902-b.png"
+                alt="Carta 7 a Theo"
+                class="carta-image"
+                onclick="openZoom(this)"
+              />
+              <img
+                src="./img/last.png"
+                alt="Carta 8 a Theo"
+                class="carta-image"
+                onclick="openZoom(this)"
+              />
+            </div>
           </div>
-          <a href="[URL-ENLACE-CARTA-1]" target="_blank" class="product-link">
-            Leer carta completa
-          </a>
         </div>
       </div>
-
-      <!-- Carta 2 -->
-      <div class="product-card horizontal-card">
-        <img src="img/carta-2.jpg" alt="Carta 2 a Theo" class="product-image" />
-        <div class="product-info">
-          <div>
-            <div class="product-title">[Título/Fecha de la carta]</div>
-            <div class="product-author">[Lugar, Fecha]</div>
-            <div class="product-description">[Extracto o descripción breve de la carta]</div>
-          </div>
-          <a href="[URL-ENLACE-CARTA-2]" target="_blank" class="product-link">
-            Leer carta completa
-          </a>
-        </div>
-      </div>
-
-      <!-- Carta 3 -->
-      <div class="product-card horizontal-card">
-        <img src="img/carta-3.jpg" alt="Carta 3 a Theo" class="product-image" />
-        <div class="product-info">
-          <div>
-            <div class="product-title">[Título/Fecha de la carta]</div>
-            <div class="product-author">[Lugar, Fecha]</div>
-            <div class="product-description">[Extracto o descripción breve de la carta]</div>
-          </div>
-          <a href="[URL-ENLACE-CARTA-3]" target="_blank" class="product-link">
-            Leer carta completa
-          </a>
-        </div>
-      </div>
-
-      <!-- Agrega más cartas según necesites -->
-      
     </div>
-  </div>
-</div>
-      </div>
-    </div>
 
+    <!-- Modal de zoom -->
+    <div id="zoomModal" class="zoom-modal" onclick="closeZoom()">
+      <span class="zoom-close" onclick="closeZoom()">&times;</span>
+      <img id="zoomImage" src="" alt="Carta ampliada" />
+    </div>
     <div
       id="modal-obras"
       class="modal"
@@ -516,23 +519,199 @@
     >
       <div class="modal-content" tabindex="-1">
         <div class="modal-header">
-          <h2 class="modal-title">Obras</h2>
+          <h2 class="modal-title">Obras de Van Gogh</h2>
           <button class="modal-close" aria-label="Cerrar modal">&times;</button>
         </div>
         <div class="modal-body">
-          <h3>Algunas obras pintadas en Auvers</h3>
-          <ul>
-            <li><em>Trigal con cuervos</em></li>
-            <li><em>Jardín en Auvers</em></li>
-            <li><em>Raíces de árboles</em></li>
-            <li><em>Retrato del Dr. Paul Gachet</em></li>
-            <li><em>La iglesia de Auvers-sur-Oise</em></li>
-            <li><em>Mademoiselle Gachet en el jardín</em></li>
-            <li><em>Marguerite Gachet al piano</em></li>
-          </ul>
+          <div class="section">
+            <div class="obras-grid">
+              <!-- Trigal con cuervos -->
+              <div class="obra-card">
+                <div class="obra-image-container">
+                  <img
+                    src="./img/trigal-cuervos.jpg"
+                    alt="Trigal con cuervos"
+                    class="obra-image"
+                  />
+                </div>
+                <div class="obra-info">
+                  <h3 class="obra-title">Trigal con cuervos</h3>
+                  <p class="obra-technique">
+                    Óleo sobre lienzo, 50.5 x 103 cm, c. 1890
+                  </p>
+                  <p class="obra-description">
+                    Una de las obras más famosas de Van Gogh. Expresa "tristeza,
+                    soledad extrema" pero también lo "saludable y fortalecedor
+                    del campo" con potentes combinaciones de color.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Vista de Auvers-sur-Oise -->
+              <div class="obra-card">
+                <div class="obra-image-container">
+                  <img
+                    src="./img/auvers-oise.jpg"
+                    alt="Vista de Auvers-sur-Oise"
+                    class="obra-image"
+                  />
+                </div>
+                <div class="obra-info">
+                  <h3 class="obra-title">Vista de Auvers-sur-Oise</h3>
+                  <p class="obra-technique">
+                    Óleo sobre lienzo, 50.2 x 52.5 cm, c. 1890
+                  </p>
+                  <p class="obra-description">
+                    Muestra el pueblo donde Van Gogh pasó sus últimos dos meses.
+                    Demuestra la variedad de técnicas de pincelada que
+                    desarrolló a lo largo de su carrera.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Raíces de árboles -->
+              <div class="obra-card">
+                <div class="obra-image-container">
+                  <img
+                    src="./img/raices-arboles.jpg"
+                    alt="Raíces de árboles"
+                    class="obra-image"
+                  />
+                </div>
+                <div class="obra-info">
+                  <h3 class="obra-title">Raíces de árboles</h3>
+                  <p class="obra-technique">
+                    Óleo sobre lienzo, 50.3 x 100.1 cm, c. 1890
+                  </p>
+                  <p class="obra-description">
+                    Probablemente su última pintura. Muestra troncos y raíces
+                    destinados a la madera en una cantera cercana a Auvers,
+                    descrita como "lleno de sol y vida".
+                  </p>
+                </div>
+              </div>
+
+              <!-- La iglesia de Auvers-sur-Oise -->
+              <div class="obra-card">
+                <div class="obra-image-container">
+                  <img
+                    src="./img/iglesia-auvers.jpg"
+                    alt="La iglesia de Auvers-sur-Oise"
+                    class="obra-image"
+                  />
+                </div>
+                <div class="obra-info">
+                  <h3 class="obra-title">La iglesia de Auvers-sur-Oise</h3>
+                  <p class="obra-technique">
+                    Óleo sobre lienzo, 93 x 74.5 cm, c. 1890
+                  </p>
+                  <p class="obra-description">
+                    El único cuadro que realizó de esta iglesia gótica del siglo
+                    XIII. Su estilo anticipa influencias en los fauvistas y
+                    expresionistas.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Retrato del Dr. Gachet (perdido) -->
+              <div class="obra-card special-card">
+                <div class="obra-image-container">
+                  <img
+                    src="./img/gachet-perdido.jpg"
+                    alt="Retrato del Dr. Gachet (obra perdida)"
+                    class="obra-image"
+                  />
+                  <div class="obra-badge">Obra Perdida</div>
+                </div>
+                <div class="obra-info">
+                  <h3 class="obra-title">Retrato del Dr. Gachet</h3>
+                  <p class="obra-technique">Óleo sobre lienzo, c. 1890</p>
+                  <p class="obra-description">
+                    Una de las obras más buscadas de la historia. Subastada por
+                    82,5 millones de dólares en 1990, su paradero actual es
+                    desconocido.
+                  </p>
+                  <a
+                    href="https://www.nytimes.com/es/2024/12/20/espanol/cultura/obra-maestra-perdida-van-gogh.html"
+                    target="_blank"
+                    class="obra-link"
+                  >
+                    Artículo The New York Times: La búsqueda de la obra maestra
+                    perdida
+                  </a>
+                </div>
+              </div>
+
+              <!-- Retrato del Dr. Gachet (Musée d'Orsay) -->
+              <div class="obra-card">
+                <div class="obra-image-container">
+                  <img
+                    src="./img/gachet-orsay.jpg"
+                    alt="Retrato del Dr. Gachet"
+                    class="obra-image"
+                  />
+                </div>
+                <div class="obra-info">
+                  <h3 class="obra-title">Retrato del Dr. Gachet</h3>
+                  <p class="obra-technique">
+                    Óleo sobre lienzo, 68.2 x 57 cm, c. 1890
+                  </p>
+                  <p class="obra-description">
+                    El doctor fue clave en los últimos meses de Van Gogh. Su
+                    rostro transmite la melancolía que refleja "la expresión
+                    desgarradora de nuestra época".
+                  </p>
+                </div>
+              </div>
+
+              <!-- Mademoiselle Gachet en su jardín -->
+              <div class="obra-card">
+                <div class="obra-image-container">
+                  <img
+                    src="./img/marguerite-jardin.jpg"
+                    alt="Mademoiselle Gachet en su jardín"
+                    class="obra-image"
+                  />
+                </div>
+                <div class="obra-info">
+                  <h3 class="obra-title">Mademoiselle Gachet en su jardín</h3>
+                  <p class="obra-technique">
+                    Óleo sobre lienzo, 46 x 55 cm, c. 1890
+                  </p>
+                  <p class="obra-description">
+                    Representa a Marguerite, la hija del doctor Gachet, en su
+                    jardín de Auvers-sur-Oise.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Marguerite Gachet al piano -->
+              <div class="obra-card">
+                <div class="obra-image-container">
+                  <img
+                    src="./img/marguerite-piano.jpg"
+                    alt="Marguerite Gachet al piano"
+                    class="obra-image"
+                  />
+                </div>
+                <div class="obra-info">
+                  <h3 class="obra-title">Marguerite Gachet al piano</h3>
+                  <p class="obra-technique">
+                    Óleo sobre lienzo, 102 x 50 cm, c. 1890
+                  </p>
+                  <p class="obra-description">
+                    Marguerite inmersa en su mundo musical. Van Gogh retrata con
+                    sensibilidad extraordinaria la soledad y concentración a
+                    través de colores y texturas vibrantes.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
     <div
       id="modal-tienda"
       class="modal"
@@ -1096,6 +1275,29 @@
           }
         });
       })();
+
+      function openZoom(img) {
+        const modal = document.getElementById("zoomModal");
+        const zoomImg = document.getElementById("zoomImage");
+
+        zoomImg.src = img.src;
+        zoomImg.alt = img.alt;
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeZoom() {
+        const modal = document.getElementById("zoomModal");
+        modal.classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+
+      // Cerrar con tecla ESC
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeZoom();
+        }
+      });
     </script>
   </body>
 </html>
